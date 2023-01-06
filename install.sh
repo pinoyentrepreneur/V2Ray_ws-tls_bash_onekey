@@ -8,6 +8,7 @@
 #	email:admin@wulabing.com
 #	Official document: www.v2ray.com
 #====================================================
+apt update && apt upgrade -y && apt-get dist-upgrade
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
