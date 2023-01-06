@@ -142,7 +142,7 @@ chrony_install() {
 
     judge "chronyd 启动 "
 
-    timedatectl set-timezone Asia/Shanghai
+    timedatectl set-timezone Asia/Manila
 
     echo -e "${OK} ${GreenBG} 等待时间同步 ${Font}"
     sleep 10
@@ -249,7 +249,7 @@ basic_optimization() {
 
 port_alterid_set() {
     if [[ "on" != "$old_config_status" ]]; then
-        read -rp "请输入连接端口（default:443）:" port
+        port="443"
         [[ -z ${port} ]] && port="443"
         alterID="0"
     fi
@@ -439,7 +439,7 @@ ssl_install() {
 }
 
 domain_check() {
-    read -rp "请输入你的域名信息(eg:www.wulabing.com):" domain
+    read -rp "Please enter your domain name (eg:www.wulabing.com):" domain
     domain_ip=$(curl -sm8 https://ipget.net/?ip="${domain}")
     echo -e "${OK} ${GreenBG} 正在获取 公网ip 信息，请耐心等待 ${Font}"
     wgcfv4_status=$(curl -s4m8 https://www.cloudflare.com/cdn-cgi/trace -k | grep warp | cut -d= -f2)
@@ -726,7 +726,7 @@ vmess_link_image_choice() {
         echo "请选择生成的链接种类"
         echo "1: V2RayNG/V2RayN"
         echo "2: quantumult"
-        read -rp "请输入：" link_version
+        link_version="1"
         [[ -z ${link_version} ]] && link_version=1
         if [[ $link_version == 1 ]]; then
             vmess_qr_link_image
@@ -1012,7 +1012,6 @@ modify_camouflage_path() {
 menu() {
     update_sh
     menu_num="1"
-    read -rp "请输入数字：" menu_num
     case $menu_num in
     0)
         update_sh
