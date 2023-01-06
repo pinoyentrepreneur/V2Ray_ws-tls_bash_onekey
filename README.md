@@ -30,6 +30,7 @@ V2ray Client Config: `~/v2ray_info.inf`
 Nginx Root Directory： `/etc/nginx`
 
 Cretificate Key : `/data/v2ray.key`
+
 Certificate File : `/data/v2ray.crt`
 
 
